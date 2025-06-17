@@ -2,7 +2,7 @@ name: CI/CD for HTML Website
 
 on:
   push:
-    branches: [main]  # Or "master" if you're using that
+    branches: [master]  # Or "master" if you're using that
 
 permissions:
   contents: read
