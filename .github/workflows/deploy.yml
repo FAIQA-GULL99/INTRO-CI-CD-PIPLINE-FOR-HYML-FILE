@@ -1,8 +1,8 @@
-name: CI 
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [master]  # or main — match your branch name
+    branches: [ master ]  # Change to 'main' if that's your default branch
 
 permissions:
   contents: read
@@ -20,14 +20,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+      - name: Set up Pages
+        uses: actions/configure-pages@v5
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'  # This is your site's root folder
+          path: '.'  # Ensure this points to the folder containing your index.html
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
